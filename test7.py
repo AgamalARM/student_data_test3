@@ -23,6 +23,7 @@ if authentication_status:
     st.write("### What is Dataset you want?")
     select_item = st.radio("Please select Dataset",
                   ("Add Admin", "Add Teacher", "Add Student","Add Subject"))
+#######################   add admin file 1,2  ###############################################
     if select_item == "Add Admin":      ### add admin
         file1 = open("admin_data.csv")
         df_admins = pd.DataFrame(file1)  
@@ -58,14 +59,14 @@ if authentication_status:
         file2 = open('admin_data.csv')
         df_admins.to_csv (r'admin_data.csv', index = False, header=True)
         file2.close()
-  #####################################################################################
+  ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
         pass
-  #######################################################################################
+  ################################## add student file 5,6#####################################################
     elif select_item == "Add Student":    ### add student
-        file1 = open("student_data.csv")
-        df_students = pd.DataFrame(file1)  
-        file1.close()
+        file5 = open("student_data.csv")
+        df_students = pd.DataFrame(file5)  
+        file5.close()
         
         student_id = st.sidebar.text_input("Student ID")
         student_name = st.sidebar.text_input("Student Name")
@@ -99,11 +100,11 @@ if authentication_status:
         csv1 = convert_df(df_students)
         #st.write(csv1)
         
-        file2 = open('student_data.csv')
+        file6 = open('student_data.csv')
         df_students.to_csv (r'student_data.csv', index = False, header=True)
-        file2.close()
-   ####################################################################################
-    elif select_item == "Add Admin":      ### add admin
+        file6.close()
+   ############################# add subjectfile 7,8#######################################################
+    elif select_item == "Add Subject":      ### add subject
         pass
 
 elif authentication_status == False:
